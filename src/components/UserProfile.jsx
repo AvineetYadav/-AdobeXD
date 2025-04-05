@@ -1,9 +1,10 @@
+import React from "react";
 import { useSelector } from "react-redux";
-import { Camera } from "lucide-react";
+import { FaCamera } from "react-icons/fa";
 
 const UserProfile = () => {
   const userDetails = useSelector((state) => state.user);
-  console.log(userDetails?.user?.username)
+  console.log(userDetails?.user?.username);
 
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center p-4">
@@ -12,24 +13,23 @@ const UserProfile = () => {
         <hr className="border-dashed border-gray-300 mb-4" />
 
         <div className="flex items-center mb-4">
-          <div className="relative">
+          <div className="relative w-16 h-16">
             <img
               src="https://previews.123rf.com/images/sheftsoff/sheftsoff1907/sheftsoff190700785/127795430-close-up-business-woman-face-portrait-isolated-on-white-background-smiling-female-model-office-suit.jpg"
               alt="User Avatar"
-              className="w-16 h-16 rounded-full"
+              className="w-16 h-16 rounded-full border"
             />
-            <div className="absolute bottom-1 left-10">
-            <div className="absolute bottom-1 left-10">
-              <Camera className="w-5 h-5 text-gray-600 bg-white p-0.5 rounded-full" />
-            </div>
+            <div className="absolute bottom-0 right-0 w-6 h-6 bg-[#6C25FF] rounded-full flex items-center justify-center cursor-pointer">
+              <FaCamera className="text-white text-xs" />
             </div>
           </div>
           <div className="ml-4">
-            <h2 className="text-lg font-medium text-gray-800">{userDetails?.user?.username}</h2>
-            <h3 className=" text-sm font-normal text-gray-800">
+            <h2 className="text-lg font-medium text-gray-800">
+              {userDetails?.user?.username}
+            </h2>
+            <h3 className="text-sm font-normal text-gray-800">
               {userDetails?.user?.email}
             </h3>
-            <p className="text-sm text-gray-600"></p>
           </div>
         </div>
 
